@@ -14,7 +14,7 @@ Create an empty dynamic graph with no nodes and no edges.
 .. code:: python
 
 	import dynetx as dn
-	g = dt.DynGraph(edge_removal=True)
+	g = dn.DynGraph(edge_removal=True)
 
 During the construction phase the ``edge_removal`` parameter allows to specify if the dynamic graph will allow edge removal or not.
 
@@ -47,7 +47,7 @@ The same method can be used to add any ``ebunch`` of interaction.  An *ebunch* i
 
 .. code:: python
 
-	g.add_interaction_from(H.edges(), t=2)
+	g.add_interactions_from(H.edges(), t=2)
 
 
 ^^^^^
@@ -168,6 +168,6 @@ A dynamic network can be also described as stream of interactions, a chronologic
 the ``stream_interactions`` method returns a generator that streams the interactions in ``g``, where ``e`` is a 4-tuple ``(u, v, op, t)``
 
  - ``u, v`` are nodes
- - ``op`` is a edge creation or deletion event (respectively ``+``, ``.``)
+ - ``op`` is a edge creation or deletion event (respectively ``+``, ``-``)
  - ``t`` is the interactions timestamp
 
